@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Flex-grow</title>
+    <style>
+        /* Thiết lập container chứa các item */
+        .container {
+            display: flex;
+            background-color: #f4f4f4;
+            border: 2px solid #333;
+            padding: 10px;
+            gap: 10px; /* Khoảng cách giữa các item */
+            width: 100%; /* Chiếm toàn bộ chiều ngang màn hình */
+            box-sizing: border-box;
+            height: 150px;
+        }
+
+        /* Thiết lập định dạng chung cho 5 flex items */
+        .item {
+            background-color: #4CAF50; /* Màu xanh lá */
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            /* Mặc định flex-grow của tất cả là 0, chúng chỉ chiếm không gian bằng nội dung bên trong */
+        }
+
+        /* Áp dụng flex-grow cho riêng item thứ 2 */
+        .item-2 {
+            flex-grow: 1; 
+            /* Do các item khác có flex-grow = 0, toàn bộ khoảng trống thừa của container 
+               sẽ được dồn hết cho phần tử này. */
+            background-color: #FF5722; /* Đổi màu cam để dễ nhận biết sự khác biệt */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Ví dụ về thuộc tính flex-grow</h2>
+    <p>Trong ví dụ này, div thứ 2 được gán <code>flex-grow: 1;</code>. Do đó, nó phình to ra và chiếm toàn bộ phần không gian còn thừa của container.</p>
+
+    <!-- Vùng chứa gồm 5 flex items -->
+    <div class="container">
+        <div class="item item-1">Div 1</div>
+        <div class="item item-2">Div 2 (flex-grow: 1)</div>
+        <div class="item item-3">Div 3</div>
+        <div class="item item-4">Div 4</div>
+        <div class="item item-5">Div 5</div>
+    </div>
+
+</body>
+</html>
